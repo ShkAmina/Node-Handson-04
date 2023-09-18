@@ -4,14 +4,15 @@ import { Link } from 'react-router-dom'
 import "../App.css"
 
 function Signup() {
-    const [Detail, setDetail] = useState([{
+    const [Detail, setDetail] = useState({
         name: "",
         phone: "",
         email: "",
         password: ""
-    }])
-    const InputHandle = () => {
-        setDetail({ ...Detail, [event.target.name]: event.target.value })
+    })
+    const InputHandle = (event) => {
+        setDetail({ ...Detail,[event.target.name]: event.target.value })
+        console.log(event)
     }
 
     async function SubmitResult(event) {

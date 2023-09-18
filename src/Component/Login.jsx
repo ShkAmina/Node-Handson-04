@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom'
 import "../App.css"
 function Login() {
 
-    const [detail,setDetail]=useState(   {
+    const [detail,setDetail]=useState({
         email: "",
         password: ""
     })
     const handleInput = (event) => {
         setDetail({ ...detail, [event.target.name]: event.target.value })
+        console.log(event.target.value)
     }
     async function SubmitResult(event){
         event.preventDefault();
