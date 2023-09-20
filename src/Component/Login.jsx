@@ -10,16 +10,16 @@ function Login() {
     })
     const handleInput = (event) => {
         setDetail({ ...detail, [event.target.name]: event.target.value })
-        console.log(event.target.value)
+        // console.log(event.target.value)
     }
     async function SubmitResult(event){
         event.preventDefault();
         localStorage.clear()
 
-        await axios.post("https://handson-04-data-amshk.onrender.com/api/category/login", detail)
-        .then((res)=>{console.log(res.data);localStorage.setItem('token', res.data.token)})
+        await axios.post(" https://handson-04-data-as.onrender.com/api/category/login", detail)
+        .then((res)=>{console.log(res.data.Msg);localStorage.setItem('token', res.data.token)})
         .catch((err) => console.log(err))
-        console.log(localStorage.getItem('token'))
+        // console.log(localStorage.getItem('token'))
         // console.log(submit)
     }
     return (
